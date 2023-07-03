@@ -1,0 +1,52 @@
+:root{
+    --fondo : #c1feff;
+    --Primario: #0066f5;
+    --PrimarioOscuro: #002e6e ;
+    --Secundario: #60ffb7;
+    --SecundarioOscuro: #2d7655 ;
+    --Tercer: #f9e3d0;
+    --TerceroOscuro: #f9c699 ;
+}
+
+body{
+    background-color: var(--Tercer);
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/*
+    Encabezado de la pagina
+*/
+
+header{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    font-size: 4vw;
+}
+
+h2{
+    font-size: 2.5vw;
+    text-align: center;
+}
+
+.image{
+    width: 20rem;
+    height: 20rem;
+}
+
+p{
+    font-size: 1.5vw;
+}

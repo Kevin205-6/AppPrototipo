@@ -1,0 +1,30 @@
+{
+  "name": "raspberry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "pag": "cd client && npm run dev && cd ..",
+    "ser-pag": "concurrently -n Servidor,React  \"npm run dev\"  \"npm run pag\" ",
+    "app": "concurrently -n Servidor,React,Electron  \"npm run dev\"  \"npm run pag\" \"wait-on http://localhost:5173 && electron .\""
+  },
+  "author": "Kevin Pérez Escamilla",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^2.0.22",
+    "wait-on": "^7.0.1"
+  },
+  "dependencies": {
+    "corss": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "electron": "^25.2.0",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "serialport": "^11.0.0",
+    "socket.io": "^4.7.1"
+  }
+}
