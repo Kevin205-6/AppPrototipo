@@ -16,15 +16,7 @@ const io = new SocketServer(server,{
     }
 });
 
-const objeto = {
-        num : 2,
-        infoAlumno: {
-            Nombre: "Kevin",
-            Matricula: "20011462",
-            Semestre: "6",
-            Grupo: "A"
-        }
-};
+
 
 app.use(cors());
 app.use(morgan('dev'));
@@ -37,10 +29,14 @@ io.on('connection', (socket)=>{
 let cont = 0
 parserArduino.on('data',(data)=>{
     if(cont >= 2){
-        var matricula = data.toString();
-        console.log(matricula);
-        Esp32.write(matricula.replace('\r', ''));
-        //io.emit('prueba', objeto);
+        var dato = data.toString();
+        var matricula = dato.replace('\r', '');
+        Esp32.write(matricula);
+        const objeto = {
+            Num : 2,
+            Alumno: null
+        };
+        io.emit('prueba', objeto);
         //console.log("Mesaje enviado: " + matricula);
         //console.log("Mesaje enviado: " + Desencriptar(matricula));
     }
@@ -48,10 +44,16 @@ parserArduino.on('data',(data)=>{
 });
 
 parserEsp32.on('data', (data)=>{
-    console.log('Esp32: ' + data);
-    let objet = JSON.parse(Desencriptar(data));
+    let objet = JSON.parse(data);
     console.log(objet)
     io.emit("prueba", objet)
+    setTimeout(()=>{
+        const objeto = {
+            Num : 1,
+            Alumno: null
+        };
+        io.emit('prueba', objeto);
+    }, 2000)
 });
 
 server.listen(port, ( )=>{

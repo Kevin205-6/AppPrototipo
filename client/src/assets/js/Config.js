@@ -1,5 +1,5 @@
 const port = '3004';
-const ip = '192.168.138.124';
+const ip = 'localhost';
 
 export {
     port,

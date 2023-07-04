@@ -29,9 +29,9 @@ function App() {
   useEffect(()=>{
     
     socket.on('prueba',(data)=>{
-      setnum(data.num);
-      setobject(data.infoAlumno);
-      console.log(data.num)
+      setnum(data.Num);
+      setobject(data.Alumno);
+      console.log(data)
     });
     return ()=>{
       socket.off();
