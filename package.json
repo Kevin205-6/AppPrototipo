@@ -6,11 +6,11 @@
   "type": "module",
   "scripts": {
     "start": "node .",
-    "test" : "electron .",
-    "dev": "nodemon server/Server.js",
-    "pag": "cd client && npm run dev && cd ..",
-    "ser-pag": "concurrently -n Servidor,React  \"npm run dev\"  \"npm run pag\" ",
-    "app": "concurrently -n Servidor,React,Electron  \"npm run dev\"  \"npm run pag\" \"wait-on http://localhost:5173 && electron .\""
+    "test" : "electron main.js",
+    "dev": "nodemon server/Server.js ",
+    "pag": "cd client && npm run dev && cd .. ",
+    "ser-pag": "concurrently -n Servidor,React  \"npm run dev\"  \"npm run pag\"",
+    "app": "concurrently -n Servidor,React,Electron  \"npm run dev\"  \"npm run pag\" \"wait-on http://localhost:5173 && electron .\" "
   },
   "author": "Kevin Pérez Escamilla",
   "license": "ISC",
