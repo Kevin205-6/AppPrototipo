@@ -3,12 +3,12 @@
 */
 
 const arduino = { 
-    path: 'COM7',
+    path: '/dev/ttyACM0',
     baudRate: 9600 
 };
 
 const esp32 = { 
-    path: 'COM4',
+    path: '/dev/ttyUSB0',
     baudRate: 115200 
 };
 

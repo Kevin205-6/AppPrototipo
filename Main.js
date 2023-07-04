@@ -34,10 +34,17 @@ io.on('connection', (socket)=>{
     //io.emit('prueba', objeto);
 });
 
+let cont = 0
 parserArduino.on('data',(data)=>{
-    let matricula = Encriptar(data);
-    Esp32.write(matricula);
-    io.emit('prueba', objeto);
+    if(cont >= 2){
+        var matricula = data.toString();
+        console.log(matricula);
+        Esp32.write(matricula.replace('\r', ''));
+        //io.emit('prueba', objeto);
+        //console.log("Mesaje enviado: " + matricula);
+        //console.log("Mesaje enviado: " + Desencriptar(matricula));
+    }
+    cont ++;
 });
 
 parserEsp32.on('data', (data)=>{
