@@ -2,10 +2,11 @@
   "name": "raspberry",
   "version": "1.0.0",
   "description": "",
-  "main": "Main.js",
+  "main": "main.js",
   "type": "module",
   "scripts": {
     "start": "node .",
+    "test" : "electron .",
     "dev": "nodemon server/Server.js",
     "pag": "cd client && npm run dev && cd ..",
     "ser-pag": "concurrently -n Servidor,React  \"npm run dev\"  \"npm run pag\" ",
