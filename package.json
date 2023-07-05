@@ -2,7 +2,6 @@
   "name": "raspberry",
   "version": "1.0.0",
   "description": "",
-<<<<<<< HEAD
   "main": "server/Server.js",
   "type": "module",
   "scripts": {
@@ -12,17 +11,6 @@
     "pag": "cd client && npm run dev && cd ..",
     "ser-pag": "concurrently -n Servidor,React  \"npm run dev\"  \"npm run pag\" ",
     "app": "concurrently -n Servidor,React,Electron  \"npm run dev\"  \"npm run pag\" \"wait-on http://localhost:5173 && electron .\""
-=======
-  "main": "main.js",
-  "type": "module",
-  "scripts": {
-    "start": "node .",
-    "test" : "electron main.js",
-    "dev": "nodemon server/Server.js ",
-    "pag": "cd client && npm run dev && cd .. ",
-    "ser-pag": "concurrently -n Servidor,React  \"npm run dev\"  \"npm run pag\"",
-    "app": "concurrently -n Servidor,React,Electron  \"npm run dev\"  \"npm run pag\" \"wait-on http://localhost:5173 && electron .\" "
->>>>>>> 67d1639cb3d632f882f346d3e94c3a341dcf481d
   },
   "author": "Kevin Pérez Escamilla",
   "license": "ISC",
