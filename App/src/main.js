@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+import { app, BrowserWindow } from "electron";
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -6,7 +6,11 @@ const createWindow = () => {
     height: 800,
   });
 
+<<<<<<<< HEAD:App/src/main.js
   win.loadURL("http://192.168.1.70:5173/");
+========
+  win.loadURL("http://localhost:5173/");
+>>>>>>>> 67d1639cb3d632f882f346d3e94c3a341dcf481d:main.js
 };
 
 try {
