@@ -2,11 +2,12 @@
   "name": "raspberry",
   "version": "1.0.0",
   "description": "",
-  "main": "Main.js",
+  "main": "server/Server.js",
   "type": "module",
   "scripts": {
     "start": "node .",
     "dev": "nodemon server/Server.js",
+    "test": "electron .",
     "pag": "cd client && npm run dev && cd ..",
     "ser-pag": "concurrently -n Servidor,React  \"npm run dev\"  \"npm run pag\" ",
     "app": "concurrently -n Servidor,React,Electron  \"npm run dev\"  \"npm run pag\" \"wait-on http://localhost:5173 && electron .\""
