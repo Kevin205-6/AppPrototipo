@@ -6,7 +6,7 @@ const createWindow = () => {
     height: 800,
   });
 
-  win.loadURL("http://192.168.1.70:5173/");
+  win.loadURL("http://localhost:5173/");
 };
 
 try {
